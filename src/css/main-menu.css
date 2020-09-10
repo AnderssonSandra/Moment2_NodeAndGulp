@@ -1,0 +1,51 @@
+.icon {
+    position: absolute;
+    top: 1em;
+    right: 0.5em;
+    font-size: 2em;
+    color: white;
+    z-index: 12;
+}
+
+/*Navigation*/
+#main-menu {
+    display: none;
+}
+
+#main-menu ul {
+    width: 258px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5em 0 0 0;
+    margin: 0;
+    list-style: none;
+    background-color: #618182;
+    z-index: 10;
+    border-left: 6px solid white;
+}
+
+#main-menu a {
+    text-decoration: none;
+    width: 100%;
+    display: block;
+    padding: 1.5em 0 1.5em 3em;
+    line-height: 1;
+    background-color: #618182;
+    color: #fff; 
+    box-sizing: border-box;
+}
+
+#main-menu a:hover {
+    background-color: white;
+    text-transform: uppercase;
+    color: #618182;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 800px) {
+    #main-menu ul {
+        width: 100%;
+    }
+}

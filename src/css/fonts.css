@@ -1,0 +1,82 @@
+/*Fonts*/
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+p, 
+li, 
+a, 
+span,
+label,
+th,
+td {
+    font-family: 'Segoe UI', arial, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 3em;
+    color: black;
+    text-align: center;
+    padding-top: 6em;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #011526;
+    padding: 0.8em 0 0.3em 0;
+}
+
+h3 {
+    font-size: 1.6em;
+    color: #033F73;
+}
+
+p,
+a {
+    font-size: 1.2em;
+    padding: 0 0 1em 0;
+}
+
+.header-title {
+    font-size: 3em;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+}
+
+.introtext {
+    width: 50%;
+    margin: 0 auto;
+    padding: 3em 1em;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 800px) {
+    .header-title {
+        font-size: 2em;
+    }
+
+    .introtext {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .header-title {
+        font-size: 1.5em;
+    }
+
+    .introtext {
+        width: 100%;
+    }
+}

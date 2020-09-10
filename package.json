@@ -1,0 +1,23 @@
+{
+  "name": "moment2_nodeandgulp",
+  "version": "1.0.0",
+  "description": "School project- Node & Gulp",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "gulp"
+  ],
+  "author": "Sandra Andersson",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-order": "^1.2.0",
+    "gulp-uglify-es": "^2.0.0"
+  }
+}
