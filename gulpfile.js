@@ -4,6 +4,8 @@ const concat = require("gulp-concat");
 const uglify = require ("gulp-uglify-es").default; 
 const cleanCss = require ("gulp-clean-css");
 const imagemin = require ("gulp-imagemin");
+const browserSync = require('browser-sync').create();
+const del = require("del");
 
 //paths
 const files = {
@@ -13,14 +15,19 @@ const files = {
     imagesPath: "src/**/*.{gif,png,jpg,svg}"
 }
 
-//copy HTML files
+//remove pub folder
+function clean() {
+    return del(['pub/']);
+ }
+
+// send HTML files to pub folder
 function copyHTML () {
     return src(files.htmlPath)
         .pipe(dest('pub')
     );
 }
 
-//concat and minify js files
+//concat and minify js files- send to pub folder
 function jsTask() {
     return src(files.jsPath)
         .pipe(concat('main.js')) 
@@ -29,7 +36,7 @@ function jsTask() {
     );
 }
 
-//cancat and minify css files
+//concat and minify css files- send to pub folder
 function cssTask() {
     return src(files.cssPath)
         .pipe(concat('styles.css')) 
@@ -38,7 +45,7 @@ function cssTask() {
     );
 }
 
-//minify images 
+//minify images- send to pub folder
 function imageTask() {
     return src(files.imagesPath)
     .pipe(imagemin())
@@ -46,15 +53,32 @@ function imageTask() {
     );
 }
 
-//watcher
+//watch changes and update browser
 function watchTask() {
-    watch([files.htmlPath, files.jsPath, files.cssPath, files.imagesPath],
-        parallel(copyHTML, jsTask, cssTask, imageTask)
-    );
+    browserSync.init({
+        injectChanges: false,
+        server: {
+            baseDir: 'pub/'
+        }
+    });
+        watch([files.htmlPath], copyHTML).on('change', browserSync.reload);
+        watch([files.cssPath], cssTask).on('change', browserSync.reload);
+        watch([files.jsPath], jsTask).on('change', browserSync.reload);
+        watch([files.imagesPath], imageTask).on('change', browserSync.reload);
+
 }
 
-//default task
+//export public tasks
+exports.clean = clean;
+exports.copyHTML = copyHTML;
+exports.cssTask = cssTask;
+exports.jsTask  = jsTask;
+exports.imageTask = imageTask;
+exports.watchTask = watchTask;
+
+//default tasks
 exports.default = series (
+    clean,
     parallel(copyHTML, jsTask, cssTask, imageTask),
     watchTask
 );
