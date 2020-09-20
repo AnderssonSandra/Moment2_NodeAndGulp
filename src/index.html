@@ -6,6 +6,7 @@
     <title>Moment 2- Gulp & node</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://kit.fontawesome.com/2c9b326388.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- hamburgermenu -->
@@ -15,17 +16,73 @@
     <!-- menu -->
     <nav id="main-menu">
         <ul>
-            <li><a href="index.html">Moment 2</a></li>
-            <li><a href="images.html">Bilder</a></li>
+            <li><a href="index.html">Destinations</a></li>
+            <li><a href="index.html">Adventures</a></li>
+            <li><a href="index.html">Travel Guide</a></li>
+            <li><a href="index.html">Bucket List</a></li>
+            <li><a href="index.html">Home</a></li>
         </ul>
     </nav> 
     <!-- header -->
-    <header>
-        <h1 class="header-title">Moment 2- Node och Gulp</h1>
+    <header id="header">
+        <h1 class="header-title">Welcome to my travel inspiration site</h1>
     </header>
-    <div >
-        <p class="introtext">Det här är en uppgift i kursen webbutveckling 3 som jag läser på programmet webbutvecklare på Mittuniversitetet. Uppgiften går ut på att lära sig att använda Node.js och Gulp. Vi jobbar med att automatisera olika delar i utvecklingen för att underlätta för oss utvecklare. I den här uppgiften skapar vi en grundstruktur för att automatisera olika uppgifter för att slå ihop, minifiera och konkatenera CSS, HTML, Javascript samt bilder i olika format.   </p>       
-    </div>
+    <!-- wrapper -->
+    <section class="wrapper">
+        <!-- text article -->
+        <article class="text-wrapper" id="text-1">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <button class="btn">Read more</button>
+        </article>
+        <!-- text and image article -->
+        <article class="box-wrapper-right">
+            <div class="box">
+                <h2>rubrik</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div> 
+            <div class="box">
+                <img class="image" src="../images/img1.jpg" alt="bild">
+            </div>
+        </article>
+        <!-- text and image article -->
+        <article class="box-wrapper-left">
+            <div class="box">
+                <h2>rubrik</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div> 
+            <div class="box">
+                <img class="image" src="../images/img2.jpg" alt="bild">
+            </div>
+        </article>
+        <!-- text article -->
+        <article class="text-wrapper" id="text-2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <button class="btn">Read more</button>
+        </article>
+        <!-- text and image article -->
+        <article class="box-wrapper-right">
+            <div class="box">
+                <h2>rubrik</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div> 
+            <div class="box">
+                <img class="image" src="../images/img3.jpg" alt="bild">
+            </div>
+        </article>
+        <!-- text and image article -->
+        <article class="box-wrapper-left">
+            <div class="box">
+                <h2>rubrik</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div> 
+            <div class="box">
+                <img class="image" src="../images/img4.jpg" alt="bild">
+            </div>
+        </article>
+    </section>
+    <footer>
+        <p id="footer-text">Have a nice day!</p>
+    </footer>
     <script src="js/main.js"></script>
 </body>
 </html>

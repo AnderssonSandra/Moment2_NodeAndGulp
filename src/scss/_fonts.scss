@@ -1,18 +1,24 @@
 /*Fonts*/
+
 h1, 
 h2, 
 h3, 
 h4, 
 h5, 
-h6, 
-p, 
+h6,
 li, 
-a, 
+a
+{
+    font-family: $specialFont;
+}
+
+p, 
 span,
 label,
 th,
-td {
-    font-family: 'Segoe UI', arial, sans-serif;
+td
+{
+    font-family: $basicFont;
 }
 
 h1,
@@ -44,39 +50,30 @@ p,
 a {
     font-size: 1.2em;
     padding: 0 0 1em 0;
+    line-height: 1.4;
 }
 
 .header-title {
-    font-size: 3em;
+    font-size: 7em;
     color: white;
     position: absolute;
     bottom: 0;
-    margin: 0;
 }
 
-.introtext {
-    width: 50%;
-    margin: 0 auto;
-    padding: 3em 1em;
-    box-sizing: border-box;
+#footer-text {
+    font-family: 'Amatic SC', cursive;
 }
 
-@media screen and (max-width: 800px) {
+//responsive design for tablets
+@include tablet {
     .header-title {
-        font-size: 2em;
-    }
-
-    .introtext {
-        width: 80%;
+        font-size: 6em;
     }
 }
 
-@media screen and (max-width: 550px) {
+//responsive design for phones
+@include phone {
     .header-title {
-        font-size: 1.5em;
-    }
-
-    .introtext {
-        width: 100%;
+        font-size: 3em;
     }
 }

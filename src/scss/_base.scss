@@ -1,0 +1,139 @@
+/*Reset CSS*/
+*, *:before, *:after{
+    box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: none;
+}
+
+footer, header, nav, section, main{
+    display: block;
+}
+
+body{
+    line-height: 1;
+}
+
+ol, ul{
+    list-style: none;
+}
+
+blockquote, q{
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after{
+    content: '';
+    content: none;
+}
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input{
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+/*Variables- Blue Colors*/
+$blue: #031926;
+$lighten-blue: lighten($blue, 5%);
+$lightest-blue: lighten($blue, 90%);
+$darken-blue: darken($blue, 5%);
+
+/*Variables- Other Colors*/
+$btn-color: #839698;
+$white: white;
+$grey: #f4f6fb;
+
+/*Variables- Fonts*/
+$specialFont: 'Amatic SC', cursive;
+$basicFont: 'Open Sans', sans-serif;
+
+
+/*Mixins*/
+//use for image and text area
+@mixin parent-boxes ($direction) {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    @if $direction == "right" {
+        flex-direction: row;
+        background-color: $lightest-blue;
+        
+    } @else {
+        flex-direction: row-reverse;
+        background-color: $lighten-blue;
+    }
+}
+
+@mixin boxes {
+    width: 50%;
+    padding: 2em;
+    box-sizing: border-box;    
+    background-color: $white;
+}
+
+//buttons
+@mixin btn {
+    background-color: $btn-color;
+    color: $lightest-blue;
+    font-family: $specialFont;
+    border-radius: 5px;
+    border: 4px solid $lightest-blue;
+    padding: 1em;
+    font-size: 1.3em;
+    &:hover {
+        background-color: $lightest-blue;
+        color: $btn-color;
+    }
+}
+
+//use for text area
+@mixin textBox {
+    padding: 2em;
+    p {
+        width: 50%;
+        margin: 0 auto;
+        padding: 3em 1em;
+        box-sizing: border-box;
+    }
+
+    .btn {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+//Responsive design for tablet
+@mixin tablet {
+    @media (max-width: 850px) { 
+        @content; 
+    }
+}
+
+//Responsive design for phone
+@mixin phone {
+    @media (max-width: 550px) { 
+        @content; 
+    }
+}
+
