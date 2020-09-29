@@ -9,6 +9,8 @@ const del = require("del");
 const gulpSass = require('gulp-sass');
 gulpSass.complier = require('node-sass');
 const sourcemaps = require('gulp-sourcemaps');
+const babel = require("gulp-babel");
+
 
 //paths
 const files = {
@@ -32,11 +34,14 @@ function copyHTML () {
     );
 }
 
-//concat and minify js files- send to pub folder
+//concat and minify js files and use babel for backwards compatible versions of js - send to pub folder
 function jsTask() {
     return src(files.jsPath)
+        .pipe(sourcemaps.init())
+        .pipe(babel({ presets: ['@babel/env'] }))
         .pipe(concat('main.js')) 
         .pipe(uglify()) 
+        .pipe(sourcemaps.write(".maps"))
         .pipe(dest('pub/js') 
     );
 }
